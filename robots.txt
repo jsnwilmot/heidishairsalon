@@ -1,5 +1,4 @@
-# Allow all crawlers access to the site.
 User-agent: *
 Allow: /
 
-Sitemap: http://www.heidishairsalon.ca/sitemap.xml
+Sitemap: https://heidishairsalon.ca/sitemap.xml
