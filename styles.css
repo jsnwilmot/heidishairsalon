@@ -299,6 +299,25 @@ p {
   line-height: 1.55;
 }
 
+.promo-note {
+  width: fit-content;
+  max-width: 680px;
+  margin-top: 14px;
+  padding: 8px 12px;
+  background: rgba(215, 168, 91, 0.12);
+  color: var(--rose-dark);
+  border: 1px solid rgba(215, 168, 91, 0.34);
+  border-radius: var(--radius);
+  font-size: 0.94rem;
+  font-weight: 800;
+}
+
+.hero .promo-note {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
 .hero-actions,
 .contact-actions {
   display: flex;
@@ -703,6 +722,12 @@ p {
 .contact-intro > p:not(.section-kicker) {
   max-width: 720px;
   color: var(--muted);
+}
+
+.section-heading .promo-note,
+.contact-intro > .promo-note {
+  color: var(--rose-dark);
+  font-size: 0.94rem;
 }
 
 .contact-card {
