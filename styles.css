@@ -43,6 +43,12 @@ a {
   color: inherit;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(49, 94, 134, 0.55);
+  outline-offset: 3px;
+}
+
 address {
   font-style: normal;
 }
@@ -491,6 +497,12 @@ p {
   font-weight: 800;
 }
 
+.expectation-list a,
+.service-followup a {
+  color: var(--blue);
+  font-weight: 800;
+}
+
 .services {
   background:
     linear-gradient(180deg, var(--linen) 0%, #f8f1e8 100%);
@@ -623,6 +635,52 @@ p {
 
 .pricing-note {
   margin-top: 18px;
+}
+
+.meet-preview {
+  background: var(--linen);
+}
+
+.meet-preview-card {
+  display: grid;
+  gap: 22px;
+  align-items: center;
+  padding: 22px;
+  background: var(--white);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  box-shadow: var(--soft-shadow);
+}
+
+.meet-preview-card p:not(.section-kicker) {
+  max-width: 680px;
+  color: var(--muted);
+}
+
+.meet-preview-card .button {
+  margin-top: 20px;
+}
+
+.meet-heidi {
+  background: var(--white);
+}
+
+.portrait-frame {
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--soft-shadow);
+}
+
+.portrait-frame img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  height: auto;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.portrait-frame-small {
+  max-width: 220px;
 }
 
 .home-salon {
@@ -1077,6 +1135,11 @@ p {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .meet-preview-card {
+    grid-template-columns: 220px minmax(0, 1fr);
+    padding: 28px;
+  }
+
   .review-cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1178,22 +1241,22 @@ p {
     row-gap: 24px;
   }
 
-  .contact-content {
+  .contact .contact-content {
     display: contents;
   }
 
-  .contact-intro {
+  .contact .contact-intro {
     grid-column: 1;
     grid-row: 1;
   }
 
-  .contact-card {
+  .contact .contact-card {
     grid-column: 1;
     grid-row: 2;
     margin-top: 0;
   }
 
-  .contact-actions {
+  .contact .contact-actions {
     grid-column: 1;
     grid-row: 3;
   }
@@ -1235,6 +1298,14 @@ p {
   .hero-actions .button,
   .contact-actions .button {
     width: 100%;
+  }
+
+  .page-hero-inner {
+    padding-block: 46px 38px;
+  }
+
+  .portrait-frame-small {
+    max-width: 150px;
   }
 
   .note-grid {
@@ -1290,6 +1361,16 @@ p {
 
   .section-pad {
     padding-block: 50px;
+  }
+
+  .price-category dl > div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding: 11px 14px;
+  }
+
+  .price-category dd {
+    white-space: normal;
   }
 
   .service-group,

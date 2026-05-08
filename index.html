@@ -60,22 +60,62 @@
           },
           "availableLanguage": "English"
         },
-        "priceRange": "$$",
+        "priceRange": "$15-$225 CAD",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "94 Keystone Terrace W",
           "addressLocality": "Lethbridge",
-          "addressRegion": "AB",
-          "addressCountry": "CA"
+          "addressRegion": "Alberta",
+          "addressCountry": "Canada"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Lethbridge"
-        },
+        "areaServed": "Lethbridge, Alberta",
         "sameAs": [
           "https://fb.com/HeidisHairSalon79",
           "https://g.page/r/CeIhEBN1-3MEEAE/review"
-        ]
+        ],
+        "openingHours": "Mo-Su by appointment",
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Appointment type",
+            "value": "By appointment only. Call or email Heidi to book."
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Hair salon services",
+          "itemListElement": [
+            {
+              "@type": "OfferCatalog",
+              "name": "Haircuts",
+              "itemListElement": [
+                { "@type": "Offer", "name": "Kids Cut", "price": "15.00", "priceCurrency": "CAD", "itemOffered": { "@type": "Service", "name": "Kids Cut" } },
+                { "@type": "Offer", "name": "Men's Cut", "price": "20.00", "priceCurrency": "CAD", "itemOffered": { "@type": "Service", "name": "Men's Cut" } },
+                { "@type": "Offer", "name": "Women's Cut", "price": "35.00", "priceCurrency": "CAD", "itemOffered": { "@type": "Service", "name": "Women's Cut" } },
+                { "@type": "Offer", "name": "Seniors Cut and Blow-Dry", "price": "40.00", "priceCurrency": "CAD", "itemOffered": { "@type": "Service", "name": "Seniors Cut and Blow-Dry" } }
+              ]
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Colour and highlights",
+              "itemListElement": [
+                { "@type": "Offer", "name": "Colour Regrowth", "price": "90.00", "priceCurrency": "CAD", "itemOffered": { "@type": "Service", "name": "Colour Regrowth" } },
+                { "@type": "Offer", "name": "Full Colour", "price": "110.00", "priceCurrency": "CAD", "itemOffered": { "@type": "Service", "name": "Full Colour" } },
+                { "@type": "Offer", "name": "Partial Highlights", "price": "120.00", "priceCurrency": "CAD", "itemOffered": { "@type": "Service", "name": "Partial Highlights" } },
+                { "@type": "Offer", "name": "Highlights", "price": "160.00", "priceCurrency": "CAD", "itemOffered": { "@type": "Service", "name": "Highlights" } }
+              ]
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Styling and treatments",
+              "itemListElement": [
+                { "@type": "Offer", "name": "Shampoo and Blow-Dry", "price": "25.00", "priceCurrency": "CAD", "itemOffered": { "@type": "Service", "name": "Blow-Dry" } },
+                { "@type": "Offer", "name": "Conditioning Treatment", "price": "25.00", "priceCurrency": "CAD", "itemOffered": { "@type": "Service", "name": "Conditioning Treatment" } },
+                { "@type": "Offer", "name": "Cezanne Smoothing Treatment", "price": "180.00", "priceCurrency": "CAD", "itemOffered": { "@type": "Service", "name": "Cezanne Smoothing Treatment" } }
+              ]
+            }
+          ]
+        }
       }
     </script>
     <!-- Google tag (gtag.js) -->
@@ -186,7 +226,7 @@
             </article>
           </div>
 
-          <p class="service-followup">Not sure which service to ask for? <a href="services.html">View all services</a> or <a href="contact.html">call or email Heidi to book</a>.</p>
+          <p class="service-followup">Not sure which service to ask for? <a href="services.html">View services</a>, <a href="pricing.html">check prices</a>, <a href="gallery.html">browse hair photos</a>, or <a href="contact.html">call or email Heidi to book</a>.</p>
         </div>
       </section>
 
@@ -217,6 +257,20 @@
         </div>
       </section>
 
+      <section class="meet-preview section-pad" aria-labelledby="meet-preview-title">
+        <div class="wrap meet-preview-card">
+          <div class="portrait-frame portrait-frame-small">
+            <img src="Images/Heidi.png" width="1122" height="1402" loading="lazy" decoding="async" alt="Heidi, owner of Heidi's Hair Salon in Lethbridge">
+          </div>
+          <div>
+            <p class="section-kicker">Meet Heidi</p>
+            <h2 id="meet-preview-title">One-on-One Hair Care in a Private Salon</h2>
+            <p>Heidi provides relaxed, personal hair services from her home salon in Lethbridge, with time to talk through cuts, colour, highlights, styling, seniors' services, and family hair appointments.</p>
+            <a class="button button-secondary" href="about.html">Meet Heidi</a>
+          </div>
+        </div>
+      </section>
+
       <section class="reviews section-pad" aria-labelledby="reviews-title">
         <div class="wrap">
           <div class="section-heading light-heading">
@@ -229,7 +283,7 @@
             <article class="review-card">
               <div class="review-meta">
                 <strong>Reema P.</strong>
-                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                 <span class="sr-only">5 out of 5 stars</span>
               </div>
               <p>Absolutely amazing experience at Heidi's Hair Salon! Heidi is incredibly talented and always makes you feel welcomed and comfortable from the moment you walk in. She truly cares about her clients, takes the time to listen to what you want, and delivers amazing results every time. Her attention to detail and passion for her work really stand out. Highly recommend to anyone looking for a stylist who genuinely cares and does incredible work!</p>
@@ -237,7 +291,7 @@
             <article class="review-card">
               <div class="review-meta">
                 <strong>Magnolia S.</strong>
-                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                 <span class="sr-only">5 out of 5 stars</span>
               </div>
               <p>Heidi provides high end colour and hair styling at an experienced professional level. Reliable, relaxed and sophisticated. I recommend her home based salon over any other place.</p>
@@ -245,7 +299,7 @@
             <article class="review-card">
               <div class="review-meta">
                 <strong>Liz O.</strong>
-                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                 <span class="sr-only">5 out of 5 stars</span>
               </div>
               <p>Super cozy, super clean, and Heidi is so sweet + talented. You can tell she really cares. My go-to salon. She took her time, explained everything, and gave me a result I loved. For anyone hesitant about trying someone new: don't be. Heidi is experienced and I highly recommend!</p>
@@ -308,9 +362,9 @@
       <section class="cta-band" aria-labelledby="final-cta-title">
         <div class="wrap cta-inner">
           <div>
-            <p class="section-kicker">Ready to book?</p>
+            <p class="section-kicker">Ready to book your appointment?</p>
             <h2 id="final-cta-title">Call or Email Heidi to Plan Your Appointment</h2>
-            <p>By appointment only. Ask about availability, service timing, quote details, and the 15% new client offer.</p>
+            <p>Call or email Heidi to ask about availability, pricing, and the 15% new client offer.</p>
           </div>
           <div class="contact-actions">
             <a class="button button-primary" href="tel:6043455097">Call Heidi</a>
