@@ -291,9 +291,18 @@ p {
   margin: 0;
 }
 
+.hero-tagline {
+  max-width: 680px;
+  margin-top: 14px;
+  color: var(--white);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
 .hero-copy {
   max-width: 660px;
-  margin-top: 16px;
+  margin-top: 12px;
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.02rem;
   line-height: 1.55;
@@ -916,6 +925,10 @@ p {
 
   .hero-copy {
     font-size: 1.12rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.55rem;
   }
 
   h1 {
