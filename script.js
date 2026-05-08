@@ -14,6 +14,17 @@ const trackLeadEvent = (eventName, eventLabel) => {
   });
 };
 
+const trackAnalyticsEvent = (eventName, eventCategory, eventLabel) => {
+  if (typeof window.gtag !== "function") {
+    return;
+  }
+
+  window.gtag("event", eventName, {
+    event_category: eventCategory,
+    event_label: eventLabel
+  });
+};
+
 if (yearTarget) {
   yearTarget.textContent = new Date().getFullYear();
 }
@@ -72,15 +83,49 @@ document.addEventListener("click", (event) => {
     return;
   }
 
-  const link = event.target.closest("a[href]");
+  const clickable = event.target.closest("a[href], button");
 
-  if (!link) {
+  if (!clickable) {
     return;
   }
 
-  const href = link.getAttribute("href") || "";
+  const href = clickable.getAttribute("href") || "";
   const normalizedHref = href.toLowerCase();
-  const linkText = link.textContent.trim().toLowerCase();
+  const text = clickable.textContent.trim();
+  const normalizedText = text.toLowerCase();
+  const eventLabel = href || text;
+  const isReviewsSectionLink = normalizedHref === "#reviews" ||
+    normalizedHref.endsWith("#reviews");
+  const isReviewClick = !isReviewsSectionLink && (
+    normalizedHref.includes("/review") ||
+    normalizedHref.includes("g.page/r") ||
+    normalizedText.includes("leave a review") ||
+    normalizedText.includes("google review") ||
+    normalizedText.includes("review")
+  );
+  const isFacebookClick = normalizedHref.includes("facebook.com") ||
+    normalizedHref.includes("fb.com") ||
+    normalizedHref.includes("m.facebook.com");
+  const isDirectionsClick = !isReviewClick && (
+    normalizedHref.includes("google.com/maps") ||
+    normalizedHref.includes("maps.google.com") ||
+    normalizedHref.includes("maps.app.goo.gl") ||
+    normalizedHref.includes("goo.gl/maps") ||
+    (
+      normalizedHref.includes("g.page") &&
+      (
+        normalizedText.includes("directions") ||
+        normalizedText.includes("map") ||
+        normalizedText.includes("location") ||
+        normalizedText.includes("find us")
+      )
+    ) ||
+    normalizedText.includes("directions") ||
+    normalizedText.includes("map") ||
+    normalizedText.includes("location") ||
+    normalizedText.includes("find us") ||
+    normalizedText.includes("lethbridge, alberta")
+  );
 
   if (normalizedHref.startsWith("tel:")) {
     trackLeadEvent("phone_click", "Phone click");
@@ -90,27 +135,29 @@ document.addEventListener("click", (event) => {
     trackLeadEvent("email_click", "Email click");
   }
 
-  if (
-    normalizedHref.includes("google.com/maps") ||
-    normalizedHref.includes("maps.google.") ||
-    normalizedHref.includes("maps.app.goo.gl") ||
-    normalizedHref.includes("goo.gl/maps") ||
-    linkText.includes("directions")
-  ) {
-    trackLeadEvent("directions_click", "Directions click");
+  if (isFacebookClick) {
+    trackAnalyticsEvent("facebook_click", "social", eventLabel);
+  }
+
+  if (isReviewClick && !isFacebookClick) {
+    trackAnalyticsEvent("review_click", "engagement", eventLabel);
+  }
+
+  if (isDirectionsClick && !isFacebookClick) {
+    trackAnalyticsEvent("directions_click", "lead", eventLabel);
   }
 
   if (
-    link.matches(".button, .nav-cta, .header-call") &&
+    clickable.matches(".button, .nav-cta, .header-call") &&
     (
       normalizedHref.startsWith("tel:") ||
       normalizedHref.startsWith("mailto:") ||
       normalizedHref.includes("#contact") ||
-      linkText.includes("book") ||
-      linkText.includes("appointment") ||
-      linkText.includes("contact") ||
-      linkText.includes("call") ||
-      linkText.includes("email")
+      normalizedText.includes("book") ||
+      normalizedText.includes("appointment") ||
+      normalizedText.includes("contact") ||
+      normalizedText.includes("call") ||
+      normalizedText.includes("email")
     )
   ) {
     trackLeadEvent("booking_click", "Booking click");
