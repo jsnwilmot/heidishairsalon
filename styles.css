@@ -308,7 +308,7 @@ p {
 }
 
 .hero-tagline {
-  max-width: 680px;
+  max-width: min(680px, 100%);
   margin-top: 14px;
   color: var(--white);
   font-family: Georgia, "Times New Roman", serif;
@@ -317,7 +317,7 @@ p {
 }
 
 .hero-copy {
-  max-width: 660px;
+  max-width: min(660px, 100%);
   margin-top: 12px;
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.02rem;
@@ -326,7 +326,7 @@ p {
 
 .promo-note {
   width: fit-content;
-  max-width: 680px;
+  max-width: min(680px, 100%);
   margin-top: 14px;
   padding: 8px 12px;
   background: rgba(215, 168, 91, 0.12);
